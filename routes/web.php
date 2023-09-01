@@ -1,30 +1,85 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProdutoController;
+
+Route::resource('produtos',ProdutoController::class);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
+Route::get('/',[ProdutoController::class,'index'])->name('produto.index');
+
+Route::get('/produto/{id?}',[ProdutoController::class,'show'])->name('produto.show');
+*/
+/*
+Route::get('/', function () {
+    return redirect()->route('admin.clientes');
+});
+
+Route::group(['prefix'=> 'admin', 'as' => 'admin.'],function(){
+    
+
+    Route::get('dashboard',function(){
+        return "Dashboard";
+    })->name('dashboard');
+    
+    Route::get('users', function(){
+        return "Users";
+    })->name('users');
+    
+    Route::get('clientes', function(){
+        return "Clientes";
+    })->name('clientes');
+    
+});
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+
+/*
 Route::get('/empresa',function(){
-    return view('empresa');
+    return view('Empresa');
 });
 
-Route::any('/any',function(){
-    return "Permitetodo tipo de acesso";
+
+Route::view('/empresa', '/empresa');
+
+Route::any('/any', function(){
+    return "Permite todo tipo de acesso";
 });
 
-Route::match(['get','post'],'/match',function(){
-    return "permite acessos definidos";
+Route::match(['put','delete'],'/match',function(){
+    return "Permite acessos definidos";
 });
+
+Route::get('/produto/{id}/{cat?}',function($id,$cat = "limpeza"){
+    return "O id do produto é:".$id."<br>"."A categoria é:".$cat;
+});
+
+Route::get('/sobre',function(){
+    return redirect('/empresa');
+});
+
+
+Route::redirect('/sobre','/empresa');
+
+Route::get('/timesnownews',function(){
+    return view('news');
+})->name('noticias');
+
+Route::get('/novidades',function(){
+    return redirect()->route('noticias');
+});
+*/

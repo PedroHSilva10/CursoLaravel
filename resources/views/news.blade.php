@@ -1,0 +1,1 @@
+<h1>News</h1> <br> <h2>As novidades do momento direto pra você</h2>
