@@ -4,15 +4,15 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\models\Category;
+use App\Models\categorie;
 
-class CategoriesSeeder extends Seeder
+class categoriesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Category::factory(5)->create();
+        categorie::factory(5)->create();
     }
 }
