@@ -1,20 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\ProductController;
 
-Route::resource('produtos',ProdutoController::class);
-
-
-
-
-
-
-
-
-
-
-
+Route::resource('products',ProductController::class);
 
 
 
