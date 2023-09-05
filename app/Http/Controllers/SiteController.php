@@ -23,6 +23,12 @@ class SiteController extends Controller
 
         return view('site.details',compact('product'));
     }
+
+    public function category($id){
+        $products = Product::where('id_category', $id)->paginate(3);
+        return view('site.category',compact('products'));
+
+    }
 }
 
 
