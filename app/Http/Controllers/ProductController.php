@@ -12,14 +12,11 @@ class ProductController extends Controller
     public function index()
     {
         //return "index";
-        //$produtos =Product::all();
+        $products =Product::paginate(3);
         //return dd($produtos);
-        $name = "Pedro";
-        $age = 21;
-        $fruits = [];
-        $html = "<h1> ola sou h1 </h1>";
+        
 
-        return view('site.home',compact('name','age','html','fruits'));
+        return view('site.home', compact('products'));
     }
 
     /**
