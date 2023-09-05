@@ -5,7 +5,7 @@ use App\Http\Controllers\ProductController;
 
 Route::resource('products',ProductController::class);
 
-
+Route::get('users/{id}', [UserController::class, 'index'])->name('user.index');
 
 /*
 Route::get('/',[ProdutoController::class,'index'])->name('produto.index');
