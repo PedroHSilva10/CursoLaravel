@@ -14,11 +14,12 @@ class ProductController extends Controller
         //return "index";
         //$produtos =Product::all();
         //return dd($produtos);
-        $name = "pedro";
+        $name = "Pedro";
         $age = 21;
+        $fruits = [];
         $html = "<h1> ola sou h1 </h1>";
 
-        return view('site.home',compact('name','age','html'));
+        return view('site.home',compact('name','age','html','fruits'));
     }
 
     /**

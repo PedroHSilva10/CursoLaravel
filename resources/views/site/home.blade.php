@@ -4,7 +4,14 @@
 
 {{--this is a joke for you?--}}
 
-{{--isset($name) ? 'exist': 'dont exist'--}}
 
-{{ $test ??'default'}}
+@include('includes.message', ['title' => 'success message'])
+
+@component('components.sidebar')
+    @slot('paragraph')
+    A random text from the slot
+    @endslot
+    
+@endcomponent
+
 @endsection
